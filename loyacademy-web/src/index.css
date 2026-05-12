@@ -1,0 +1,65 @@
+:root {
+  --bg: #f8f6f0;
+  --surface: #ffffff;
+  --border: #e0ddd5;
+  --text: #2c2a26;
+  --text-muted: #7a7670;
+  --accent: #c0392b;
+  --accent-hover: #a93226;
+  --radius: 12px;
+  --shadow: 0 2px 12px rgba(0,0,0,0.08);
+
+  --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
+  --mono: ui-monospace, Consolas, monospace;
+
+  font: 16px/1.5 var(--sans);
+  color: var(--text);
+  background: var(--bg);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+}
+
+#root {
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+}
+
+h1 { font-size: 2rem; font-weight: 700; }
+h2 { font-size: 1.25rem; font-weight: 600; }
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+a:hover { text-decoration: underline; }
+
+input[type="number"],
+input[type="text"] {
+  font-family: inherit;
+  font-size: 1rem;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 6px 10px;
+  width: 100%;
+  background: var(--surface);
+  color: var(--text);
+  transition: border-color 0.15s;
+}
+input[type="number"]:focus,
+input[type="text"]:focus {
+  outline: none;
+  border-color: var(--accent);
+}

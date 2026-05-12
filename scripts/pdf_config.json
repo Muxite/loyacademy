@@ -1,0 +1,198 @@
+{
+  "output_base": "../loyacademy-web/public/assets",
+  "tools": [
+    {
+      "id": "bmi",
+      "pdf": "../pdf/BMI 2.cdr.pdf",
+      "pages": [
+        {
+          "page": 1,
+          "role": "background",
+          "dpi": 400,
+          "make_transparent": false
+        },
+        {
+          "page": 2,
+          "role": "disc_outer",
+          "dpi": 400,
+          "make_transparent": true,
+          "transparent_threshold": 240,
+          "circle": { "cx": 0.5, "cy": 0.5, "r": 0.45 }
+        }
+      ]
+    },
+    {
+      "id": "whtr",
+      "pdf": "../pdf/WHtR V4.pdf",
+      "pages": [
+        {
+          "page": 1,
+          "role": "background",
+          "dpi": 400,
+          "make_transparent": false
+        },
+        {
+          "page": 2,
+          "role": "disc_outer",
+          "dpi": 400,
+          "make_transparent": true,
+          "transparent_threshold": 240,
+          "circle": { "cx": 0.5, "cy": 0.5, "r": 0.45 }
+        }
+      ]
+    },
+    {
+      "id": "lunar_en",
+      "pdf": "../pdf/LunarSmall En.pdf",
+      "pages": [
+        {
+          "page": 1,
+          "role": "background",
+          "dpi": 400,
+          "make_transparent": false
+        },
+        {
+          "page": 2,
+          "role": "disc_outer",
+          "dpi": 400,
+          "make_transparent": true,
+          "transparent_threshold": 240,
+          "circle": { "cx": 0.5, "cy": 0.5, "r": 0.45 }
+        },
+        {
+          "page": 3,
+          "role": "disc_inner",
+          "dpi": 400,
+          "make_transparent": true,
+          "transparent_threshold": 240,
+          "circle": { "cx": 0.5, "cy": 0.5, "r": 0.30 }
+        }
+      ]
+    },
+    {
+      "id": "lunar_th",
+      "pdf": "../pdf/LunarSmall Th.pdf",
+      "pages": [
+        {
+          "page": 1,
+          "role": "background",
+          "dpi": 400,
+          "make_transparent": false
+        },
+        {
+          "page": 2,
+          "role": "disc_outer",
+          "dpi": 400,
+          "make_transparent": true,
+          "transparent_threshold": 240,
+          "circle": { "cx": 0.5, "cy": 0.5, "r": 0.45 }
+        },
+        {
+          "page": 3,
+          "role": "disc_inner",
+          "dpi": 400,
+          "make_transparent": true,
+          "transparent_threshold": 240,
+          "circle": { "cx": 0.5, "cy": 0.5, "r": 0.30 }
+        }
+      ]
+    },
+    {
+      "id": "solar",
+      "pdf": "../pdf/SolarEternality1.1.pdf",
+      "pages": [
+        {
+          "page": 1,
+          "role": "background",
+          "dpi": 400,
+          "make_transparent": false
+        },
+        {
+          "page": 2,
+          "role": "disc_outer",
+          "dpi": 400,
+          "make_transparent": true,
+          "transparent_threshold": 240,
+          "circle": { "cx": 0.5, "cy": 0.5, "r": 0.45 }
+        },
+        {
+          "page": 3,
+          "role": "disc_inner",
+          "dpi": 400,
+          "make_transparent": true,
+          "transparent_threshold": 240,
+          "circle": { "cx": 0.5, "cy": 0.5, "r": 0.30 }
+        }
+      ]
+    },
+    {
+      "id": "athikamas",
+      "pdf": "../pdf/Athikamas Th.pdf",
+      "pages": [
+        {
+          "page": 1,
+          "role": "background",
+          "dpi": 400,
+          "make_transparent": false
+        },
+        {
+          "page": 2,
+          "role": "disc_outer",
+          "dpi": 400,
+          "make_transparent": true,
+          "transparent_threshold": 240,
+          "circle": { "cx": 0.5, "cy": 0.5, "r": 0.45 }
+        }
+      ]
+    },
+    {
+      "id": "pin_calendar",
+      "pdf": "../pdf/PinCalendar2.31 พิมพ์ไฟล์นี้.pdf",
+      "notes": "4 horizontal sliding strips. Page 2 = English, Page 4 = Thai. Page 1/3 = instruction background. Rect coords are approximate — tune via the Configurator.",
+      "pages": [
+        {
+          "page": 2,
+          "role": "strip_julian",
+          "dpi": 400,
+          "make_transparent": false,
+          "rect": { "x": 0.0, "y": 0.375, "w": 1.0, "h": 0.075 }
+        },
+        {
+          "page": 2,
+          "role": "strip_gregorian",
+          "dpi": 400,
+          "make_transparent": false,
+          "rect": { "x": 0.0, "y": 0.450, "w": 1.0, "h": 0.075 }
+        },
+        {
+          "page": 2,
+          "role": "strip_month_en",
+          "dpi": 400,
+          "make_transparent": false,
+          "rect": { "x": 0.0, "y": 0.525, "w": 1.0, "h": 0.105 }
+        },
+        {
+          "page": 2,
+          "role": "strip_day_en",
+          "dpi": 400,
+          "make_transparent": false,
+          "rect": { "x": 0.0, "y": 0.630, "w": 1.0, "h": 0.220 }
+        },
+        {
+          "page": 4,
+          "role": "strip_month_th",
+          "dpi": 400,
+          "make_transparent": false,
+          "rect": { "x": 0.0, "y": 0.525, "w": 1.0, "h": 0.105 }
+        },
+        {
+          "page": 4,
+          "role": "strip_day_th",
+          "dpi": 400,
+          "make_transparent": false,
+          "rect": { "x": 0.0, "y": 0.630, "w": 1.0, "h": 0.220 }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,135 @@
+.ruler {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background: #3a2a1a;
+  border-radius: 6px;
+  overflow: hidden;
+  user-select: none;
+  touch-action: pan-y;
+  min-height: 300px;
+}
+
+/* Fixed vertical centre reference line */
+.refLine {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: rgba(255, 220, 0, 0.9);
+  z-index: 20;
+  pointer-events: none;
+  box-shadow: 0 0 6px rgba(255,220,0,0.6);
+}
+
+/* Wrapper for each strip row */
+.stripWrapper {
+  position: relative;
+  overflow: hidden;
+  cursor: grab;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  min-height: 40px;
+}
+.stripWrapper:active { cursor: grabbing; }
+.stripWrapper:last-of-type { border-bottom: none; }
+
+/* The actual tiling strip via background-image */
+.strip {
+  position: absolute;
+  inset: 0;
+  background-repeat: repeat-x;
+  background-size: auto 100%;
+  background-color: #7a5a38;
+}
+
+/* Small label on left edge */
+.stripLabel {
+  position: absolute;
+  top: 2px;
+  left: 4px;
+  font-size: 0.6rem;
+  color: rgba(255,255,255,0.45);
+  pointer-events: none;
+  z-index: 5;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+/* Placeholder when image not loaded */
+.stripPlaceholder {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  color: rgba(255,255,255,0.4);
+  pointer-events: none;
+  gap: 4px;
+}
+.stripPlaceholder code {
+  font-family: monospace;
+  color: rgba(255,220,100,0.6);
+}
+
+/* Footer bar */
+.footer {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  padding: 4px 12px;
+  font-size: 0.65rem;
+  color: rgba(255,255,255,0.3);
+  background: rgba(0,0,0,0.25);
+  pointer-events: none;
+}
+.refLabel {
+  color: rgba(255,220,0,0.7);
+  font-weight: 700;
+  text-align: center;
+}
+
+/* ── Debug overlay ── */
+.debugLayer {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 15;
+}
+
+/* Centre tick mark */
+.dbgCentreTick {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: rgba(255, 50, 50, 0.7);
+  transform: translateX(-50%);
+}
+
+/* Live readout pill */
+.dbgReadout {
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.65);
+  color: #fff;
+  font-size: 0.7rem;
+  font-family: monospace;
+  padding: 2px 8px;
+  border-radius: 4px;
+  white-space: nowrap;
+}
+.dbgReadout strong { color: #ffd700; }
+
+/* Grid unit lines */
+.dbgGridLine {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: rgba(0, 200, 255, 0.35);
+}
