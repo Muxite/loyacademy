@@ -186,7 +186,7 @@ function DebugOverlay({ tool, rotations, discOverrides, calibration, flags }) {
  *   discOverrides — { [discId]: { centerX, centerY, sizeRatio } } from Configurator
  *   debug         — { enabled, calibration, flags: { grid, crosshair, ring, pointer, zeroRef, ticks, valueLabels, readout } }
  */
-export default function CircleRuler({ tool, rotations, onRotate, discOverrides = {}, debug = {} }) {
+export default function CircleRuler({ tool, rotations, onRotate, discOverrides = {}, debug = {}, values = {} }) {
   const containerRef = useRef(null)
   const [bgLoaded, setBgLoaded] = useState(false)
   const [bgError, setBgError] = useState(false)
@@ -275,6 +275,28 @@ export default function CircleRuler({ tool, rotations, onRotate, discOverrides =
           />
         )
       })}
+
+      {/* Indicator dots (always visible when tool defines indicators) */}
+      {tool.indicators && (() => {
+        const indicators = tool.indicators(values, rotations)
+        return indicators.length > 0 && (
+          <svg viewBox="0 0 100 100" className={styles.indicatorSvg} preserveAspectRatio="none">
+            {indicators.map((ind, i) => {
+              const disc = tool.discs.find(d => d.id === ind.discId) ?? tool.discs[0]
+              const cx  = (discOverrides[disc.id]?.centerX  ?? disc.centerX)  * 100
+              const cy  = (discOverrides[disc.id]?.centerY  ?? disc.centerY)  * 100
+              const sr  = (discOverrides[disc.id]?.sizeRatio ?? disc.sizeRatio)
+              const r   = sr / 2 * 100 * (ind.radiusFraction ?? 0.93)
+              const rad = ind.worldAngleDeg * Math.PI / 180
+              const x   = cx + r * Math.cos(rad)
+              const y   = cy + r * Math.sin(rad)
+              return ind.ring
+                ? <circle key={i} cx={x} cy={y} r={ind.size ?? 1.8} fill="none" stroke={ind.color ?? 'red'} strokeWidth="0.7" />
+                : <circle key={i} cx={x} cy={y} r={ind.size ?? 1.8} fill={ind.color ?? 'red'} />
+            })}
+          </svg>
+        )
+      })()}
 
       {/* SVG debug overlay */}
       {showDebug && (

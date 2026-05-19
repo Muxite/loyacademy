@@ -127,6 +127,7 @@ export default function ToolPage({ tool }) {
               onRotate={handleDiscRotate}
               discOverrides={configState.discOverrides}
               debug={{ ...configState.debug, calibration: configuratorCalibration }}
+              values={numerics}
             />
           )}
         </section>

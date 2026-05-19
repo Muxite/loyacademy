@@ -32,6 +32,26 @@ export default function NumericPanel({ tool, values, outputs, onChange }) {
                   <option key={opt.value} value={opt.value}>{opt.label}</option>
                 ))}
               </select>
+            ) : inp.type === 'select-number' ? (
+              <>
+                <select
+                  value={inp.options.some(o => o.value === (values[inp.id] ?? inp.defaultValue)) ? (values[inp.id] ?? inp.defaultValue) : ''}
+                  onChange={e => { if (e.target.value !== '') handleChange(inp.id, e.target.value) }}
+                >
+                  {inp.options.map(opt => (
+                    <option key={opt.value} value={opt.value}>{opt.label}</option>
+                  ))}
+                  <option value=''>Custom</option>
+                </select>
+                <input
+                  type="number"
+                  value={values[inp.id] ?? inp.defaultValue}
+                  min={inp.min}
+                  max={inp.max}
+                  step={inp.step ?? 0.01}
+                  onChange={e => handleChange(inp.id, e.target.value)}
+                />
+              </>
             ) : (
               <input
                 type="number"
